@@ -10,14 +10,14 @@ import 'package:meta/meta.dart';
 /// or one derived from it.
 ///
 /// See also [EventArgs].
-typedef EventHandler<T extends EventArgs> = void Function(T args);
+typedef EventHandler<T> = void Function(T args);
 
 /// Represents an Event that can be subscribed to
 /// but without the ability to broadcast 
 ///
 /// See also [EventArgs].
 ///
-abstract class EventSubscriber<T extends EventArgs> {
+abstract class EventSubscriber<T> {
   /// The handlers (subscribers) associated with this [Event]. Instantiated
   /// lazily (on demand) to reflect that an [Event] may have no subscribers,
   /// and if so, should not incur the overhead of instantiating an empty [List].

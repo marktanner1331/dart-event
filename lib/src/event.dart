@@ -23,7 +23,7 @@ import 'eventargs.dart';
 /// counter.onValueChanged + (args) => print(args.changedValue); // add a handler
 /// onValueChanged.broadcast(ChangedValue(value)); // broadcast the [Event] to subscribers
 /// ```
-class Event<T extends EventArgs> extends EventSubscriber<T> {
+class Event<T> extends EventSubscriber<T> {
   /// Removes all subscribers (handlers).
   void unsubscribeAll() {
     handlers.clear();
