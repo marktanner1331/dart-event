@@ -59,7 +59,9 @@ class Event<T> extends EventSubscriber<T> {
   void broadcast([T args]) {
     // ignore if no handlers
     if (handlers != null) {
-      for (var handler in handlers) {
+      //by adding a .toList() it means that a subscriber is free to unsubscribe himself in response to the event being fired
+      //without the toList() it would throw a ConcurrentModificationError
+      for (var handler in handlers.toList()) {
         handler(args);
       }
     }
